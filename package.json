@@ -1,0 +1,17 @@
+{
+  "name": "facebook-ads-api-poc",
+  "version": "0.0.1",
+  "description": "POC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "facebook-nodejs-business-sdk": "^18.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
