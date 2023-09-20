@@ -33,7 +33,7 @@ params = {
   'status' : 'PAUSED',
   'special_ad_categories' : [],
 };
-const campaigns = (new AdAccount(account_id)).createCampaign(
+const campaigns = (new AdAccount(`act_${account_id}`)).createCampaign(
   fields,
   params
 );

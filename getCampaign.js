@@ -33,7 +33,7 @@ fields = [
 params = {
   // 'effective_status' : ['ACTIVE','PAUSED'],
 };
-const campaigns = (new AdAccount(account_id)).getCampaigns(
+const campaigns = (new AdAccount(`act_${account_id}`)).getCampaigns(
   fields,
   params
 );
