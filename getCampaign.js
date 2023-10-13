@@ -26,12 +26,14 @@ const logApiCallResult = (apiCallName, data) => {
 
 let fields, params;
 fields = [
+  'name',
+  'objective',
   'results',
   'reach',
   'spend'
 ];
 params = {
-  // 'effective_status' : ['ACTIVE','PAUSED'],
+  'effective_status' : ['ACTIVE','PAUSED'],
 };
 const campaigns = (new AdAccount(`act_${account_id}`)).getCampaigns(
   fields,
