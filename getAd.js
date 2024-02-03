@@ -38,14 +38,11 @@ const logApiCallResult = (apiCallName, data) => {
 };
 
 const fields = [
-  'ad_id',
-  'ad_name',
-  // 'results',
+  'adset_id',
+  'adset_name',
   'reach',
   'impressions',
-  // 'delivery',
   'spend',
-  // 'cost_per_result',
   'ctr',
   'cpc',
   'cpm',
@@ -53,7 +50,7 @@ const fields = [
 const params = {
   'time_range' : {'since':'2023-09-19','until':'2023-10-20'},
   'filtering' : [],
-  'level' : 'ad',
+  'level' : 'adset',
   // 'breakdowns' : ['ad_name'],
 };
  (new AdAccount(ad_account_id)).getInsights(

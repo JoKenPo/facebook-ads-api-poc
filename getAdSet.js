@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const bizSdk = require('facebook-nodejs-business-sdk');
 const AdAccount = bizSdk.AdAccount;
+const AdSet = bizSdk.AdSet;
 const Campaign = bizSdk.Campaign;
 
 const access_token = process.env.ACCESS_TOKEN;
@@ -14,6 +15,7 @@ const campaign_id = process.env.CAMPAIGN_ID;
 
 const api = bizSdk.FacebookAdsApi.init(access_token);
 const account = new AdAccount(`act_${account_id}`)
+const adSet = new AdSet(`act_${account_id}`)
 const campagin = new Campaign(`${campaign_id}`)
 const showDebugingInfo = true; // Setting this to true shows more debugging info.
 if (showDebugingInfo) {
@@ -22,16 +24,16 @@ if (showDebugingInfo) {
 
 let fields, params;
 fields = [
-  // results,
-  // reach,
-  // impressions,
-  // delivery,
-  // spend,
-  // cost_per_result,
-  // ctr,
-  // cpc
+  'adset_id',
+  'adset_name',
+  'reach',
+  'impressions',
+  'spend',
+  'ctr',
+  'cpc',
+  'cpm',
 ];
-// params = {
+params = {
 //   'name' : 'My First AdSet',
 //   'lifetime_budget' : '20000',
 //   'start_time' : '2023-09-01T09:24:18-0700',
@@ -44,10 +46,10 @@ fields = [
 //   'status' : 'ACTIVE',
 
 // {"since":"2023-09-19","until":"2023-10-20"}
+'level' : 'adset',
+};
 
-// };
-
-account.getInsights(
+adSet.getInsights(
   fields,
   params
 )
